@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  agency: MyString
+  current_account: MyString
+  title: MyString
+  price: 1.5
+
+two:
+  agency: MyString
+  current_account: MyString
+  title: MyString
+  price: 1.5

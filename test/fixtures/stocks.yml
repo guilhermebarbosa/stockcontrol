@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  license_plate: MyString
+  license_name: MyString
+  name: MyString
+  qtd: 1
+  price_unit: 1.5
+  complement: MyString
+  observation: MyText
+  status: MyString
+
+two:
+  license_plate: MyString
+  license_name: MyString
+  name: MyString
+  qtd: 1
+  price_unit: 1.5
+  complement: MyString
+  observation: MyText
+  status: MyString

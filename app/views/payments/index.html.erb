@@ -1,0 +1,110 @@
+<div class="block">
+
+	<div class="block_head">
+		<div class="bheadl"></div>
+		<div class="bheadr"></div>
+		
+		<h2>Pagamento</h2>
+		
+		<ul>
+			<li><a href="<%=new_payment_path%>">Novo pagamento</a></li>
+		</ul>
+	</div>		<!-- .block_head ends -->
+	
+	<div class="block_content">
+		
+		<h2>Pagamentos Incompletos</h2>
+	
+		<form action="" method="post">
+		
+			<table cellpadding="0" cellspacing="0" width="100%" class="sortable">
+			
+				<thead>
+					<tr>
+					    <th>Banco</th>
+					    <th>Agencia</th>
+					    <th>Conta Corrente</th>
+					    <th>Titulo</th>
+					    <th>Valor</th>
+					    <th>Data de Vencimento</th>
+					    <th>Data de Pagamento</th>
+					    <th></th>
+						  <th></th>
+					    <th></th>
+					    <th></th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<% @incomplete_payments.each do |payment| %>
+            <tr>
+              <td><%= payment.bank %></td>
+              <td><%= payment.agency %></td>
+              <td><%= payment.current_account %></td>
+              <td><%= payment.title %></td>
+              <td>R$ <%= payment.price %></td>
+              <td><%= I18n.l payment.expiration_date %></td>
+              <td><% unless payment.payment_date == nil %><%= I18n.l payment.payment_date %><% end %></td>
+              <td><%= link_to 'Finalizar', complete_payment_path(payment) %></td>
+              <td><%= link_to 'Visualizar', payment %></td>
+              <td><%= link_to 'Editar', edit_payment_path(payment) %></td>
+              <td><%= link_to 'Excluir', payment, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
+            </tr>
+          <% end %>
+				</tbody>
+				
+			</table>
+						
+		</form>
+		
+	</div>		<!-- .block_content ends -->
+	
+	<div class="block_content">
+	
+		<h2>Pagamentos Completos</h2>
+		
+		<form action="" method="post">
+		
+			<table cellpadding="0" cellspacing="0" width="100%" class="sortable">
+			
+				<thead>
+					<tr>
+					    <th>Banco</th>
+					    <th>Agencia</th>
+					    <th>Conta Corrente</th>
+					    <th>Titulo</th>
+					    <th>Valor</th>
+					    <th>Data de Vencimento</th>
+					    <th>Data de Pagamento</th>
+						  <th></th>
+					    <th></th>
+					    <th></th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<% @complete_payments.each do |payment| %>
+            <tr>
+              <td><%= payment.bank %></td>
+              <td><%= payment.agency %></td>
+              <td><%= payment.current_account %></td>
+              <td><%= payment.title %></td>
+              <td>R$ <%= payment.price %></td>
+              <td><%= I18n.l payment.expiration_date %></td>
+              <td><% unless payment.payment_date == nil %><%= I18n.l payment.payment_date %><% end %></td>
+              <td><%= link_to 'Visualizar', payment %></td>
+              <td><%= link_to 'Editar', edit_payment_path(payment) %></td>
+              <td><%= link_to 'Excluir', payment, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
+            </tr>
+          <% end %>
+				</tbody>
+				
+			</table>
+						
+		</form>
+		
+	</div>		<!-- .block_content ends -->
+	
+	<div class="bendl"></div>
+	<div class="bendr"></div>
+</div>		<!-- .block ends -->

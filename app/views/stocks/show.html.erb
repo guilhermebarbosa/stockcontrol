@@ -1,0 +1,63 @@
+<div class="block">
+	<div class="block_head">
+		<div class="bheadl"></div>
+		<div class="bheadr"></div>
+		
+		<h2>Visualizar Item</h2>
+		
+	</div>		<!-- .block_head ends -->
+	
+	<div class="block_content">
+		
+		<p>
+		  <b>Placa:</b>
+		  <%= @stock.license_plate %>
+		</p>
+
+		<p>
+		  <b>Nome motorista:</b>
+		  <%= @stock.license_name %>
+		</p>
+
+		<p>
+		  <b>Titulo:</b>
+		  <%= @stock.name %>
+		</p>
+
+		<p>
+		  <b>Quantidade:</b>
+		  <%= @stock.qtd %>
+		</p>
+
+		<p>
+		  <b>Preço Unitário:</b>
+		  <%= @stock.price_unit %>
+		</p>
+
+		<p>
+		  <b>Complemento:</b>
+		  <%= @stock.complement %>
+		</p>
+		
+		<p>
+		  <b>Preço Total:</b>
+		  <%= @stock.price_unit * @stock.qtd %>
+		</p>
+
+		<p>
+		  <b>Observação:</b>
+		  <%= @stock.observation %>
+		</p>
+
+		<p>
+		  <b>Status:</b>
+		  <%= @stock.status %>
+		</p>
+
+
+	</div>		<!-- .block_content ends -->
+
+	<div class="bendl"></div>
+	<div class="bendr"></div>
+
+</div>		<!-- .block ends -->

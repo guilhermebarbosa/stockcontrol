@@ -1,0 +1,67 @@
+<div class="block">
+	<div class="block_head">
+		<div class="bheadl"></div>
+		<div class="bheadr"></div>
+
+		<h2><%= page %> Estoque</h2>
+
+	</div>		<!-- .block_head ends -->
+
+	<div class="block_content">
+
+		<p class="breadcrumb"><a href="<%= stocks_url %>">Estoque</a> &raquo; <strong><%= page %></strong></p>
+
+		<%= form_for(@payment)  do |f| %>
+		  <% if @payment.errors.any? %>
+		    <div class="message errormsg">
+		      <p>Não foi possível salvar devido aos seguintes erros:</p>
+
+		      <% @payment.errors.full_messages.each do |msg| %>
+		        <p><%= msg %></p>
+		      <% end %>
+		    </div>
+		  <% end %>
+  <p>
+    <%= f.label :Banco %><br />
+    <%= f.text_field :bank %>
+  </p>  
+  <p>
+    <%= f.label :Agencia %><br />
+    <%= f.text_field :agency %>
+  </p>
+  <p>
+    <%= f.label :conta_corrente %><br />
+    <%= f.text_field :current_account %>
+  </p>
+  <p>
+    <%= f.label :titulo %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :valor %><br />
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :data_de_vencimento %><br />
+    <%= f.date_select :expiration_date, :order => [:day, :month, :year]%>
+  </p>
+  <p>
+    <%= f.label :data_de_pagamento %><br />
+    <%= f.date_select :payment_date, :order => [:day, :month, :year], :include_blank => "true", :default => "nil"%>
+  </p>
+  <p>
+	<%= f.label :status %><br />
+	<%= f.select :status, ["aberto", "fechado"], :prompt => "Selecione", :class => "styled" %>
+  </p>
+  <p>
+    <%= f.submit page, :class => "submit small" %>
+  </p>
+<% end %>
+
+	</div>		<!-- .block_content ends -->
+
+	<div class="bendl"></div>
+	<div class="bendr"></div>
+
+</div>		<!-- .block ends -->
+
